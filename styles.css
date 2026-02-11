@@ -7,7 +7,10 @@
   --primary: #315efb;
   --primary-hover: #254ad0;
   --border: #d9dfef;
-  --success: #1f8f4f;
+  --success: #d63c3c;
+  --active-tab-bg: #e8f0ff;
+  --completed-tab-bg: #fff1f1;
+  --deleted-tab-bg: #f3efff;
 }
 
 * {
@@ -26,7 +29,7 @@ body {
 }
 
 .app {
-  width: min(680px, 100%);
+  width: min(760px, 100%);
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: 16px;
@@ -77,6 +80,28 @@ button:hover {
   background: var(--primary-hover);
 }
 
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.tab-button {
+  background: #eef2ff;
+  color: #1b2c6b;
+  padding: 0.55rem 0.85rem;
+}
+
+.tab-button:hover {
+  background: #dde7ff;
+}
+
+.tab-button.is-active {
+  background: var(--primary);
+  color: white;
+}
+
 .task-list-wrapper h2 {
   margin: 0.5rem 0;
 }
@@ -89,6 +114,18 @@ button:hover {
   gap: 0.6rem;
 }
 
+#taskList[data-tab='active'] .task-item {
+  background: var(--active-tab-bg);
+}
+
+#taskList[data-tab='completed'] .task-item {
+  background: var(--completed-tab-bg);
+}
+
+#taskList[data-tab='deleted'] .task-item {
+  background: var(--deleted-tab-bg);
+}
+
 .task-item {
   display: flex;
   align-items: center;
@@ -99,13 +136,21 @@ button:hover {
   border-radius: 10px;
 }
 
-.task-item.done .task-text {
-  text-decoration: line-through;
+.task-item.completed .task-text {
   color: var(--success);
+  text-decoration: line-through;
+  text-decoration-color: #cc1212;
+  text-decoration-thickness: 2px;
+}
+
+.task-item.deleted .task-text {
+  color: #615a7f;
 }
 
 .task-actions {
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 0.5rem;
 }
 
@@ -114,12 +159,20 @@ button:hover {
   padding: 0.45rem 0.65rem;
 }
 
-.task-actions .delete {
+.task-actions .delete,
+.task-actions .delete-now {
   background: #d63c3c;
 }
 
-.task-actions .delete:hover {
+.task-actions .delete:hover,
+.task-actions .delete-now:hover {
   background: #b92f2f;
+}
+
+.countdown {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4f4970;
 }
 
 #emptyState {

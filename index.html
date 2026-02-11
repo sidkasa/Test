@@ -18,10 +18,16 @@
         <button id="addTaskButton" type="button">Add</button>
       </section>
 
+      <section class="tabs" aria-label="Task categories">
+        <button id="tab-active" class="tab-button is-active" type="button" data-tab="active">Your Tasks</button>
+        <button id="tab-completed" class="tab-button" type="button" data-tab="completed">Completed Tasks</button>
+        <button id="tab-deleted" class="tab-button" type="button" data-tab="deleted">Deleted Tasks</button>
+      </section>
+
       <section class="task-list-wrapper" aria-label="Task list">
-        <h2>Your tasks</h2>
-        <ul id="taskList"></ul>
-        <p id="emptyState">No tasks yet. Add one above to get started.</p>
+        <h2 id="tabTitle">Your Tasks</h2>
+        <ul id="taskList" data-tab="active"></ul>
+        <p id="emptyState">No tasks in this tab yet.</p>
       </section>
     </main>
 

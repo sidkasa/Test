@@ -12,6 +12,9 @@ Then open http://localhost:8000 in your browser.
 
 ## Features
 
-- Add tasks
-- Mark tasks as done/undo
-- Delete tasks
+- Add tasks into **Your Tasks**
+- Move tasks to **Completed Tasks** with red strike-through text
+- Move tasks to **Deleted Tasks**
+- Automatically remove deleted tasks after 30 days
+- Permanently delete removed tasks immediately with **Delete Right Away**
+- Color-coded task cards for each tab
