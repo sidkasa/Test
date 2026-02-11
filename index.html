@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FocusFlow App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <h1>FocusFlow</h1>
+        <p>A lightweight app for tracking daily tasks.</p>
+      </header>
+
+      <section class="task-entry" aria-label="Add task">
+        <input id="taskInput" type="text" maxlength="100" placeholder="What do you need to do?" />
+        <button id="addTaskButton" type="button">Add</button>
+      </section>
+
+      <section class="task-list-wrapper" aria-label="Task list">
+        <h2>Your tasks</h2>
+        <ul id="taskList"></ul>
+        <p id="emptyState">No tasks yet. Add one above to get started.</p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
